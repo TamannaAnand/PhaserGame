@@ -2,11 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Making your first Phaser 3 Game - Part 1</title>
+    <title>Collect & Conquer!</title>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/src/output.css" rel="stylesheet" />
     <script defer src="main.js"></script>
+    <style>
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-black text-white font-sans">
+    <!-- Main Container -->
+    <div
+      class="flex flex-col items-center px-4 sm:px-8 lg:px-16 py-8 space-y-8"
+    >
+      <!-- Game Title -->
+      <header class="text-center">
+        <h1
+          class="text-3xl sm:text-5xl font-orbitron text-sky-400 drop-shadow-md"
+        >
+          Collect & Conquer!
+        </h1>
+        <p class="mt-2 text-base sm:text-lg text-slate-300">
+          Embark on a star-collecting adventure. Progress through levels, but
+          beware of bombs!
+        </p>
+      </header>
+
+      <!-- Section for Legend & Game container -->
+      <div class="flex justify-between gap-4">
+        <!-- Legend Section -->
+        <section class="max-w-lg bg-gradient-to-br from-sky-800 to-indigo-900 p-4 sm:p-6 rounded-xl shadow-lg flex flex-col justify-between h-full">
+            <h2 class="text-lg sm:text-xl font-semibold text-sky-300 mb-4">
+              How to Play:
+            </h2>
+            <ul class="text-sm sm:text-base text-slate-200 space-y-2 mb-6">
+              <li>
+                <strong>Move:</strong> Use <span class="text-blue-400">Arrow Keys</span> to navigate.
+              </li>
+              <li>
+                <strong>Collect:</strong> Gather all the <span class="text-yellow-400">stars</span> to progress.
+              </li>
+              <li>
+                <strong>Beware:</strong> Avoid <span class="text-red-400">bombs</span> as they appear in higher levels!
+              </li>
+            </ul>
+            <button 
+              class="mt-auto w-full sm:w-auto py-3 px-8 bg-gradient-to-br from-indigo-600 to-indigo-800 text-white text-xl font-semibold rounded-lg shadow-lg hover:bg-indigo-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+              Play Again
+            </button>
+          </section>
+          
+
+        <!-- Game Container -->
+        <div
+          id="game-container"
+          class="w-full h-[600px] bg-gradient-to-b from-indigo-800 to-indigo-900 rounded-lg shadow-md border border-indigo-500"
+        ></div>
+      </div>
+    </div>
   </body>
 </html>
